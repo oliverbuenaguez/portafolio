@@ -1,3 +1,3 @@
-# min 2 19 color de barraa
+# min 1.16-16
 
-# min 3: 03 Mis Trabajos
+programacion menú movil

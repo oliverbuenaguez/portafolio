@@ -29,16 +29,25 @@ html {
   scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
-  color: var();
+  color: var(--text-color);
 }
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.75;
 }
 
 h1 {
@@ -71,35 +80,21 @@ h6 {
   font-size: 0.7rem;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
 /*  ***** Componentes ***** */
 
-/*  ***** Heroimage ***** */
-.hero-image {
-  background-image: var(--hero-image);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: var(--hero-attachment);
-}
+/* +++ MENU +++ */
 
-.hero-image-opacity {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: var(--hero-opacity-color);
-}
-
-.hero-image-title {
-  font-size: 7.5vw;
-  color: var(--hero-text-color);
-}
-
-/*  ***** Menú ***** */
 .menu-btn {
-  outline: thin solid var(--first-color);
+  outline: thick solid var(--first-color);
   border: 0;
   cursor: pointer;
   background-color: var(--second-color);
@@ -141,156 +136,29 @@ h6 {
   background-color: var(--first-color);
 }
 
-@media screen and (min-width: 1024px) {
-  .menu-btn {
-    display: none;
-  }
+/*  ***** Heroimage ***** */
 
-  .menu {
-    position: static;
-    width: auto;
-    flex-direction: row;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .menu a {
-    padding: 0 1rem;
-  }
-
-  .menu a:last-child {
-    padding-right: 0;
-  }
-
-  .menu:hover {
-    background-color: transparent;
-  }
-}
+/*  ***** Modal ***** */
 
 /*  ***** ProgressBar ***** */
 
-progress {
-  width: 100%;
-  height: 1rem;
-  background-color: var(--gray-color);
-}
-
-progress::-webkit-progress-bar {
-  background-color: var(--gray-color);
-}
-
-progress::-webkit-progress-value {
-  background-color: var(--gray-dark-color);
-}
-
-progress::-moz-progress-bar {
-  background-color: var(--gray-dark-color);
-}
-
-.progress {
-  margin: 1rem auto;
-}
-
-.progress > p {
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 0.85rem;
-}
-
 /*  ***** Utiles ***** */
-
-.bg-gray-light {
-  background-color: var(--gray-light-color);
-}
-
 .box-shadow-1 {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
-}
-
-.btn {
-  border-radius: 0.5rem;
-  padding: 1rem;
-  display: inline-block;
-  width: 200px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  color: var(--white-color);
-  background-color: var(--first-color);
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--max-width);
-}
-
-.gray-scale {
-  filter: grayscale(1);
-}
-
-img {
-  width: 100%;
-  height: auto;
+  border: #f0f0f0 0.1rem solid; /* ++++ lo cloque yo ++++ */
 }
 
 .none {
   display: none;
 }
 
-.section {
-  padding: 2rem 1rem;
-  /* Evita que el header fijo/pegajoso oculte la sección al navegar por anclas */
-  scroll-margin-top: var(--header-heigth);
-}
-
-.section-title {
-  border-top: thin solid var(--first-color);
-  border-bottom: thin solid var(--first-color);
-  margin: 2rem auto;
-  padding: 0.5rem 1rem;
-  width: 250px;
-  text-align: center;
-  color: var(--title-color);
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-@media screen and (min-width: 1024px) {
-  .full-lg-screen {
-    width: 100%;
-    min-height: 100vh;
-  }
-
-  .text-lg-center {
-    text-align: center;
-  }
-
-  .text-lg-left {
-    text-align: left;
-  }
-
-  .text-lg-right {
-    text-align: right;
-  }
-}
-
 /*  ***** Site Styles ***** */
-
-.about > article {
-  margin-bottom: 2rem;
-}
 .header {
   position: fixed;
   left: 0;
@@ -309,59 +177,8 @@ img {
 }
 
 .logo a {
-  color: var(--first-color);
+  color: var(--white-color);
   font-weight: bold;
   font-size: 2rem;
   text-decoration: none;
-}
-
-.service-card {
-  margin: 1rem auto;
-  padding: 1rem;
-  text-align: center;
-}
-
-.service-card h3 {
-  color: var(--title-color);
-}
-
-.service-card svg {
-  margin-bottom: 1.25rem;
-  fill: var(--first-color);
-}
-
-@media screen and (min-width: 768px) {
-  .services > .container {
-    display: grid;
-    grid-template-columns: repeat(2, 45%);
-    justify-content: space-between;
-    align-content: center;
-  }
-
-  .services .section-title {
-    grid-column: span 2;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .about {
-    display: grid;
-    grid-template-columns: repeat(3, 30%);
-    justify-content: space-between;
-    align-content: center;
-  }
-  .header {
-    position: sticky;
-    top: 0;
-    padding: 0.5rem;
-    height: calc(var(--header-heigth) - 0.5rem);
-  }
-
-  .services > .container {
-    grid-template-columns: repeat(3, 30%);
-  }
-
-  .services .section-title {
-    grid-column: span 3;
-  }
 }
