@@ -90,6 +90,31 @@ p {
 }
 
 /*  ***** ↓↓↓↓Componentes ↓↓↓↓***** */
+
+/* +++ CAROUSEL +++ */
+
+.carousel {
+  margin: 2rem auto;
+  padding: 2rem 0;
+  max-width: 800px;
+  text-align: center;
+  background-color: var(--carousel-bg-color);
+}
+
+.carousel input {
+  display: none;
+}
+
+.carousel label {
+  border: medium solid var(--gray-dark-color);
+  border-radius: 50%;
+  margin: 0 0.25rem;
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  cursor: pointer;
+}
+
 /* +++ HEROIMAGE +++ */
 
 .hero-image {
@@ -259,6 +284,11 @@ progress::-moz-progress-bar {
 
 /*  ***** Utiles ***** */
 
+.avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
 .bg-gray-light {
   background-color: var(--gray-light-color);
 }
@@ -305,6 +335,10 @@ progress::-moz-progress-bar {
   width: 250px;
   text-align: center;
   color: var(--title-color);
+}
+
+.text-first-color {
+  color: var(--first-color);
 }
 
 .text-center {
@@ -380,12 +414,6 @@ progress::-moz-progress-bar {
   object-fit: cover;
 }
 
-.service-card {
-  margin: 1rem auto;
-  padding: 1rem;
-  text-align: center;
-}
-
 .portfolio-card-info {
   position: absolute;
   top: 0;
@@ -412,6 +440,37 @@ progress::-moz-progress-bar {
   height: 100%;
 }
 
+.portfolio-modal {
+  padding: 1rem;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-color);
+}
+
+.portfolio-modal h3 {
+  border-bottom: medium solid var(--first-color);
+  padding: 0.5rem 0;
+  margin: 1rem auto;
+  color: var(--title-color);
+}
+
+.portfolio-details {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-auto-rows: 2rem;
+}
+
+.portfolio-details b {
+  color: var(--first-color);
+}
+
+.service-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
 .service-card h3 {
   color: var(--title-color);
 }
@@ -429,6 +488,16 @@ progress::-moz-progress-bar {
 
   .portfolio .section-title {
     grid-column: span 2;
+  }
+
+  .portfolio-modal {
+    flex-direction: row;
+    max-width: 800px;
+  }
+
+  .portfolio-info {
+    margin-left: 1rem;
+    align-self: center;
   }
 
   .services > .container {
